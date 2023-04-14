@@ -6,12 +6,11 @@ type SignUpResponse = {
   data: any
 };
 
-const api = process.env.NODE_ENV
-
 export const useHttp = (url: string, method: string) => {
   const [ { data, loading, error }, actionFunc ] = useAxios<SignUpResponse>(
     {
-      url: `${api}/${url}`,
+      baseURL: process.env.NODE_ENV !== 'development' ? 'http://10.18.56.54:9880/' : 'api',
+      url: `/${url}`,
       method: method
     },
 
