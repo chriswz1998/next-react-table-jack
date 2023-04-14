@@ -1,12 +1,12 @@
 import { Table, TableColumnsType } from 'antd'
-import { TableDataType, TableSubDataType } from '@/pages/table/table.class'
+import { TableDataType, TableSubDataType } from '@/components/Table/table.class'
 
 export const MergeTable = ({ loading, result, subResultName, projectTableColumn, projectTableSubColumn }: {
   result: any[] | undefined,
   loading: boolean,
   subResultName: string,
   projectTableColumn: TableColumnsType<TableDataType>,
-  projectTableSubColumn: TableColumnsType<any | TableSubDataType>
+  projectTableSubColumn: TableColumnsType<TableSubDataType>
 }) => {
 
   const expandedRowRender = (item: any) => {
@@ -16,6 +16,7 @@ export const MergeTable = ({ loading, result, subResultName, projectTableColumn,
 
   return (
     <Table
+      scroll={{ y: 1150 }}
       loading={loading}
       rowKey={'id'}
       columns={projectTableColumn}

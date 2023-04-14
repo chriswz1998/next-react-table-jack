@@ -1,6 +1,6 @@
 import { Progress, TableColumnsType, Tag } from 'antd'
-import React from 'react'
 import { CheckOutlined, ExclamationCircleOutlined, ExclamationOutlined, SmileOutlined } from '@ant-design/icons'
+import { multiply_math } from '@/utils'
 
 export interface TableDataType {
   name?: string;
@@ -59,9 +59,11 @@ export const projectTableSubColumn: TableColumnsType<TableSubDataType> = [
     title: '任务完成进度',
     dataIndex: 'process',
     key: 'process',
-    render: (value: any) => <Progress strokeLinecap={'square'} strokeColor={'#87d068'} percent={value * 100}
+    render: (value: any) => <Progress strokeLinecap={'square'} strokeColor={'#87d068'}
+                                      percent={multiply_math(value, 100)}
                                       size={[ 600, 20 ]}/>
-  }, {
+  },
+  {
     title: '状态', dataIndex: 'status', key: 'status', render: (value: any) => {
       if (value === '已逾期') return <Tag icon={<ExclamationCircleOutlined/>} color="#f50">已逾期</Tag>
       if (value === '已完成') return <Tag icon={<CheckOutlined/>} color="#87d068">已完成</Tag>
@@ -72,17 +74,17 @@ export const projectTableSubColumn: TableColumnsType<TableSubDataType> = [
 
 export const staffColumn: TableColumnsType<TableDataType> = [
   { title: '工号', dataIndex: 'account', key: 'account' },
-  { title: '角色', dataIndex: 'role', key: 'role', render: (value: any) => <p>{value || '-'}</p> },
   { title: '姓名', dataIndex: 'realname', key: 'realname' },
-  { title: '完成任务数量', dataIndex: 'doneTaskNum', key: 'doneTaskNum' },
-  { title: '任务总数量', dataIndex: 'taskNum', key: 'taskNum' },
+  { title: '角色', dataIndex: 'role', key: 'role', render: (value: any) => <p>{value || '-'}</p> },
   {
     title: '资源情况',
     dataIndex: 'process',
     key: 'process',
-    render: (value: any) => <Progress strokeLinecap={'square'} strokeColor={'#87d068'} percent={value * 100}
+    render: (value: any) => <Progress strokeLinecap={'square'} strokeColor={'#87d068'} percent={multiply_math(value, 100)}
                                       size={[ 600, 20 ]}/>
-  }
+  },
+  { title: '完成任务数量', dataIndex: 'doneTaskNum', key: 'doneTaskNum' },
+  { title: '任务总数量', dataIndex: 'taskNum', key: 'taskNum' }
 ]
 
 export const staffSubColumn: TableColumnsType<TableSubDataType> = [
