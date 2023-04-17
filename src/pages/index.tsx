@@ -2,8 +2,8 @@ import { Inter } from 'next/font/google'
 import { useHttp } from '@/utils/custom.hooks'
 import { MergeTable } from '../components/Table'
 import { projectTableColumn, projectTableSubColumn } from '@/components/Table/table.class'
-import { Header } from '@/components/header'
-import { Reload } from '@/components/reload'
+import { Header } from '../components/Headers'
+import { Reload } from '../components/Reload'
 
 const inter = Inter({ subsets: [ 'latin' ] })
 

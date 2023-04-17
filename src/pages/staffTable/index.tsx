@@ -1,8 +1,8 @@
 import { useHttp } from '@/utils/custom.hooks'
 import { MergeTable } from '../../components/Table'
 import { staffColumn, staffSubColumn } from '@/components/Table/table.class'
-import { Header } from '@/components/header'
-import { Reload } from '@/components/reload'
+import { Header } from '../../components/Headers'
+import { Reload } from '../../components/Reload'
 
 
 export default function StaffTable() {

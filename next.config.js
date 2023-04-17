@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
-	swcMinify: true,
+	basePath: '/out',
 	async rewrites () {
 		return [
 			//接口请求 前缀带上/api-text/
