@@ -9,10 +9,9 @@ export const filterData = (res: any[]) => {
     List.push(res[ket])
   }
   return List.map(({ project }) => {
-    return [ ...(project) ]
+    return [...(project)]
   }).flat()
 }
-
 
 export const multiply_math = (num1: string | number, num2: string | number) => {
   return math.multiply(math.bignumber(num1), math.bignumber(num2)) as number
@@ -25,9 +24,9 @@ interface ICurrent {
 
 function useDebounce(fn: (args: any) => void, delay: number, dep: any = []) {
   const { current } = useRef<ICurrent>({ fun: fn, timer: null })
-  useEffect(function () {
+  useEffect(function() {
     current.fun = fn
-  }, [ fn ])
+  }, [fn])
 
   return useCallback((args: any) => {
     if (current.timer) {

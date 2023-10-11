@@ -8,7 +8,6 @@ export const MergeTable = ({ loading, result, subResultName, projectTableColumn,
   projectTableColumn: TableColumnsType<TableDataType>,
   projectTableSubColumn: TableColumnsType<TableSubDataType>
 }) => {
-
   const expandedRowRender = (item: any) => {
     return <Table loading={loading} rowKey={'id'} rowClassName={'no-hover-bg'} pagination={false}
                   columns={projectTableSubColumn} dataSource={item[subResultName]}/>

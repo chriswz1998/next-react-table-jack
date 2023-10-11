@@ -7,7 +7,9 @@ type SignUpResponse = {
 };
 
 export const useHttp = (url: string, method: string) => {
-  const [ { data, loading, error }, actionFunc ] = useAxios<SignUpResponse>(
+  const [
+      { data, loading, error },
+    actionFunc ] = useAxios<SignUpResponse>(
     {
       baseURL: process.env.NODE_ENV !== 'development' ? 'http://192.168.0.228:800/' : 'api',
       url: `/${url}`,
